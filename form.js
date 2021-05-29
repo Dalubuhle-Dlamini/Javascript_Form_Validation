@@ -79,9 +79,9 @@ function validate(){
             p.remove();
         }, 5000 )
         return false;
-    }
+    }else{
     alert("Form successfully submitted")
-    return true;
+    return true;}
 }
 
 //TO VIEW PASSWORD
