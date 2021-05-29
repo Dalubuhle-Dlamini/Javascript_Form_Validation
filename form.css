@@ -107,3 +107,11 @@ button:hover{
     }
 
 }
+
+.text{
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    font-size: 12px;
+    color: #f00;
+}
