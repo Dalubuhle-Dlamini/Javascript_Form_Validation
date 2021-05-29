@@ -1,6 +1,4 @@
 //THIS WILL CHANGE BORDER COLOR WHEN IT IS FOCUSED ON
-
-
 setInterval( () => {
     //VARIABLES
     let active = document.activeElement;
@@ -56,3 +54,54 @@ problem please let me know*/
 
 
 //PASSWORD VALIDATION
+function validate(){
+    let password = document.querySelector("#input2").value;
+    let retypePassword = document.querySelector("#input3").value;
+    let notSimilar = document.createTextNode("Passwords are not similar");
+    let weak = document.createTextNode("Must contain A-Z, a-z, number, symbol");
+    let p = document.createElement("p");
+    let div = document.querySelector(".error");
+
+    if(password != retypePassword){
+        div.appendChild(p);
+        p.appendChild(notSimilar);
+        p.setAttribute('class', 'text');
+        setTimeout( function(){
+            p.remove();
+        }, 5000 )
+        return false;
+
+    }else if (!password.match(/[A-Z]/g) || !password.match(/[0-9]/g) || !password.match(/[a-z]/g) || !password.match(/[!@#$%^&*]/g)){
+        div.appendChild(p);
+        p.appendChild(weak);
+        p.setAttribute('class', 'text');
+        setTimeout( function(){
+            p.remove();
+        }, 5000 )
+        return false;
+    }
+    alert("Form successfully submitted")
+    return true;
+}
+
+//TO VIEW PASSWORD
+function hidePassword(){
+    let password = document.querySelector("#input2")
+
+    if (password.type === 'password'){
+        password.type = "text";
+    }else{
+        password.type = "password"
+    }
+
+}
+
+function hideCheck(){
+    let retypePassword = document.querySelector("#input3");
+
+    if(retypePassword.type === 'password'){
+        retypePassword.type = "text";
+    } else {
+        retypePassword.type = "password";
+    }
+}
